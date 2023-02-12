@@ -14,7 +14,7 @@ public class Connect {
 
     private final String URL = "jdbc:mysql://localhost:3306/alpha-cab";
     private final String USERNAME = "root";
-    private final String PASSWORD = "root";
+    private final String PASSWORD = "";
     private static Connect connect;
 
     private Connect() {

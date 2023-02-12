@@ -1,5 +1,5 @@
 package com.alphacab.controllers;
 
-public class AdminCustomerServlet {
+public class AdminCustomer {
     
 }
