@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet
         {
             HttpSession session = request.getSession();
             session.invalidate();
-            response.sendRedirect("cab");
+            response.sendRedirect("alphacab");
             return;
         }
         HttpSession session = request.getSession();
