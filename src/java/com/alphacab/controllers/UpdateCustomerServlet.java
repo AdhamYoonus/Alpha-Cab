@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+// Directs servlet to the URL /updateCustomer
+@WebServlet(name = "UpdateCustomerServlet", urlPatterns = {"/updateCustomer"})
 public class UpdateCustomerServlet {
     
 }
