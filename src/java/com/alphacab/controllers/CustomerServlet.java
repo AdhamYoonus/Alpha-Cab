@@ -19,6 +19,8 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.ResponseBody;
 
+// Directs servlet to the URL /customer
+@WebServlet(name = "CustomerServlet", urlPatterns = {"/customer"})
 public class CustomerServlet {
     
 }
