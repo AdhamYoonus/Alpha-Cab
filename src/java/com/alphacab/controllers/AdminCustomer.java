@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+// Directs servlet to the URL /admin/customer
+@WebServlet(name = "AdminCustomer", urlPatterns = {"/admin/customer"})
 public class AdminCustomer {
     
 }
