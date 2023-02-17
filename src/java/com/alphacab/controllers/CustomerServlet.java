@@ -1,6 +1,6 @@
 package com.alphacab.controllers;
 
-import com.alhpacab.dao.BookingDAO;
+import com.alphacab.dao.BookingDAO;
 import com.alphacab.dao.PriceDAO;
 import com.alphacab.models.Booking;
 import com.alphacab.models.User;
