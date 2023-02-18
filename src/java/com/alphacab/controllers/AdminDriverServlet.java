@@ -5,6 +5,7 @@ import com.alphacab.dao.DriverDAO;
 import com.alphacab.models.Booking;
 import com.alphacab.models.Driver;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -71,6 +72,19 @@ public class AdminDriverServlet extends HttpServlet
         
         response.sendRedirect("driver?action=list");
         
+    }
+    
+    private void forwardRequest(String page, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
+        request.getRequestDispatcher("/WEB-INF/jsp/view/" + page + ".jsp").forward(request, response);
+    }
+    
+    private void forwardToListPage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
+        List<Driver> list = new DriverDAO().getAllDrivers();
+        request.setAttribute("list", list);
+        System.out.println("List Size in driver=" + list.size());
+        forwardRequest("driver/list", request, response);
     }
 
     @Override
