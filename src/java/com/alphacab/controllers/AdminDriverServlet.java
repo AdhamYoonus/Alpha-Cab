@@ -50,6 +50,30 @@ public class AdminDriverServlet extends HttpServlet
     }
 
     @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException 
+    {
+        String username = request.getParameter("username");
+        String name = request.getParameter("driverName");
+        String password = request.getParameter("password");
+        String licenseNumber = request.getParameter("licenseNumber");
+        String carType = request.getParameter("carType");
+        String carModel = request.getParameter("carModel");
+        
+        int accessLevel = 2;
+        
+        Driver driver = new Driver(name, licenseNumber, carType, carModel, username, password, accessLevel);
+        DriverDAO dao = new DriverDAO();
+        if(dao.insertDriver(driver) != null)
+        {
+            System.out.println("Driver inserted...");
+        }
+        
+        response.sendRedirect("driver?action=list");
+        
+    }
+
+    @Override
     public String getServletInfo() {
         return "Short description";
     }
