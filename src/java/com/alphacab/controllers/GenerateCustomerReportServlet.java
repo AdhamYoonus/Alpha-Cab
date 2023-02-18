@@ -42,6 +42,17 @@ public class GenerateCustomerReportServlet extends HttpServlet {
     }
 
     @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException 
+    {
+        String dateAndTime = request.getParameter("date");
+        String[] dateTime = dateAndTime.split("T");
+        Date date = Date.valueOf(dateTime[0]);
+        request.getSession().setAttribute("date", date);
+        response.sendRedirect(request.getContextPath() + "/admin/customer-report?action=reportOnDate");
+    }
+
+    @Override
     public String getServletInfo() {
         return "Short description";
     }
